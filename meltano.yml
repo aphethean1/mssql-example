@@ -1,0 +1,23 @@
+version: 1
+default_environment: dev
+project_id: 64aa1a00-cf4d-4d63-b30c-17e701184521
+environments:
+- name: dev
+- name: staging
+- name: prod
+plugins:
+  extractors:
+  - name: tap-mssql
+    variant: transferwise
+    pip_url: git+https://github.com/Matatika/pipelinewise-tap-mssql.git
+  loaders:
+  - name: target-postgres
+    variant: transferwise
+    pip_url: git+https://github.com/Matatika/pipelinewise-target-postgres@v0.1.0
+  - name: target-snowflake
+    variant: matatika
+    pip_url: git+https://github.com/Matatika/target-snowflake@v0.1.1
+  transformers:
+  - name: dbt
+    variant: dbt-labs
+    pip_url: "dbt-core~=1.3.0 dbt-postgres~=1.3.0 dbt-snowflake~=1.3.0\n"

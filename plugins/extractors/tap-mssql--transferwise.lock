@@ -1,0 +1,45 @@
+{
+  "plugin_type": "extractors",
+  "name": "tap-mssql",
+  "namespace": "mssql",
+  "variant": "transferwise",
+  "label": "MSSQL",
+  "docs": "https://hub.meltano.com/taps/mssql",
+  "repo": "https://github.com/Matatika/pipelinewise-tap-mssql",
+  "pip_url": "git+https://github.com/Matatika/pipelinewise-tap-mssql.git",
+  "description": "MSSQL Data Warehouse",
+  "capabilities": [
+    "discover",
+    "state",
+    "catalog"
+  ],
+  "settings": [
+    {
+      "name": "user",
+      "kind": "string",
+      "protected": false
+    },
+    {
+      "name": "password",
+      "kind": "password",
+      "protected": false
+    },
+    {
+      "name": "host",
+      "kind": "string",
+      "protected": false
+    },
+    {
+      "name": "port",
+      "kind": "integer",
+      "value": 1433,
+      "protected": false
+    },
+    {
+      "name": "database",
+      "kind": "string",
+      "protected": false
+    }
+  ],
+  "full_description": "MSSQL Data Warehouse"
+}
